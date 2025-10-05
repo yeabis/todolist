@@ -1,41 +1,41 @@
-import React, { useState } from "react";
-import addimge from "../assets/add.png";
+// import React, { useState } from "react";
+// import addimge from "../assets/add.png";
 
-function Addtodo() {
-  const [newlist, setnewlist] = useState("");
+// function Addtodo() {
+//   const [newlist, setnewlist] = useState("");
 
-  const handleChange = (event) => {
-    setnewlist(event.target.value);
-  };
+//   const handleChange = (event) => {
+//     setnewlist(event.target.value);
+//   };
 
-  const handleAdd = (event) => {
-    event.preventDefault();
+//   const handleAdd = (event) => {
+//     event.preventDefault();
 
-    onAdd(newlist);
+//     onAdd(newlist);
 
-    setnewlist("");
-  };
+//     setnewlist("");
+//   };
 
-  return (
-    <div>
-      <form onSubmit={handleAdd}>
-        <div>
-          <input
-            value={newlist}
-            type="text"
-            className="form-control"
-            placeholder="Add a new task..."
-            onChange={handleChange}
-          />
-        </div>
+//   return (
+//     <div>
+//       <form onSubmit={handleAdd}>
+//         <div>
+//           <input
+//             value={newlist}
+//             type="text"
+//             className="form-control"
+//             placeholder="Add a new task..."
+//             onChange={handleChange}
+//           />
+//         </div>
 
-        <div>
-          <button className="btn btn-outline-secondary" type="submit">
-            Add <img src={addimge} alt="Add" />
-          </button>
-        </div>
-      </form>
-    </div>
-  );
-}
-export default Addtodo;
+//         <div>
+//           <button className="btn btn-outline-secondary" type="submit">
+//             Add <img src={addimge} alt="Add" />
+//           </button>
+//         </div>
+//       </form>
+//     </div>
+//   );
+// }
+// export default Addtodo;
