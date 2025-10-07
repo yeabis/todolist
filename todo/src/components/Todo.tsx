@@ -103,7 +103,7 @@ function Todo() {
         ))}
       </ul>
 
-      {/* 👇 AddTodo moved here at the bottom */}
+      
       <div className="mt-4">
         <AddTodo onAdd={handleAdd} />
       </div>
