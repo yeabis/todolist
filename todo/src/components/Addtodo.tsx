@@ -1,41 +1,31 @@
-// import React, { useState } from "react";
-// import addimge from "../assets/add.png";
+import React, { useState } from "react";
 
-// function Addtodo() {
-//   const [newlist, setnewlist] = useState("");
+const AddTodo = ({ onAdd }) => {
+  const [text, setText] = useState("");
 
-//   const handleChange = (event) => {
-//     setnewlist(event.target.value);
-//   };
+  const handleAdd = () => {
+    if (text.trim() === "") return;
+    onAdd(text);
+    setText("");
+  };
 
-//   const handleAdd = (event) => {
-//     event.preventDefault();
+  return (
+    <div className="form-floating mb-3">
+      <textarea
+        className="form-control"
+        placeholder="Add todo here"
+        id="floatingTextarea"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      ></textarea>
 
-//     onAdd(newlist);
+      <div className="d-grid gap-2 col-6 mx-auto mt-3">
+        <button className="btn btn-primary" type="button" onClick={handleAdd}>
+          Add Todo
+        </button>
+      </div>
+    </div>
+  );
+};
 
-//     setnewlist("");
-//   };
-
-//   return (
-//     <div>
-//       <form onSubmit={handleAdd}>
-//         <div>
-//           <input
-//             value={newlist}
-//             type="text"
-//             className="form-control"
-//             placeholder="Add a new task..."
-//             onChange={handleChange}
-//           />
-//         </div>
-
-//         <div>
-//           <button className="btn btn-outline-secondary" type="submit">
-//             Add <img src={addimge} alt="Add" />
-//           </button>
-//         </div>
-//       </form>
-//     </div>
-//   );
-// }
-// export default Addtodo;
+export default AddTodo;
